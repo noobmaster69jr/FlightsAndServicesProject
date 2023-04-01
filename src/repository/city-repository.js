@@ -12,7 +12,7 @@ class CityRepository{
     }
    }
 
-   async deleteCity({cityId}){
+   async deleteCity(cityId){
     try{
         await City.destroy({
             where:{
@@ -26,7 +26,7 @@ class CityRepository{
     }
    }
 
-   async updateCity({cityId, data}){
+   async updateCity(cityId, data){
     try {
         const city = await City.update(data, {
             where: {
@@ -39,7 +39,7 @@ class CityRepository{
     }
    }
 
-   async getCity({cityId}){
+   async getCity(cityId){
     try {
         const city = await City.findByPk(cityId)
     } catch (error) {
@@ -48,3 +48,5 @@ class CityRepository{
     }
    }
 }
+
+module.exports = CityRepository
